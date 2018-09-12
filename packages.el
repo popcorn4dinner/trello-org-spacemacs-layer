@@ -1,7 +1,7 @@
 ;;; packages.el --- trello Layer packages File for Spacemacs
 ;;
 ;; Copyright (c) 2012-2014 Sylvain Benner
-;; Copyright (c) 2014-2015 Sylvain Benner & Contributors
+;; Copyright (c) 2014-2018 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -58,13 +58,39 @@ which require an initialization must be listed explicitly in the list.")
 
     :config
     (progn
+      (dolist (prefix '(("t" . "trello")
+                        ("tb" . "board")
+                        ("tc" . "card")
+                        ("tcc" . "comments")
+                        ("tj" . "jump")
+                        ("ts" . "setup")))
+        (spacemacs/declare-prefix-for-mode 'org-mode (car prefix) (cdr prefix)))
+
+      (spacemacs/set-leader-keys-for-major-mode 'org-mode
+        "tbs"  'org-trello/sync-buffer
+        "tbn"  'org-trello/create-board-and-install-metadata
+        "tbu"  'org-trello/update-board-metadata
+        "tbi"  'org-trello/install-board-metadata
+        "tcs"  'org-trello/sync-card
+        "tcd"  'org-trello/archive-card
+        "tcD"  'org-trello/archive-cards
+        "tcd"  'org-trello/kill-entity
+        "tcK"  'org-trello/kill-cards
+        "tcm"  'org-trello/assign-me
+        "tccs" 'org-trello/show-card-comments
+        "tcca" 'org-trello/add-card-comments
+        "tjb"  'org-trello/jump-to-trello-board
+        "tjc"  'org-trello/jump-to-trello-card
+        "tsc"  'org-trello/check-setup
+        "tsd"  'org-trello/delete-setup
+        "tsn"  'org-trello/install-key-and-token
+        "tv"   'org-trello/version
+        "th"   'org-trello/help-describing-bindings)
+
+      (spacemacs/declare-prefix "jt" "trello")
       (evil-leader/set-key
-        "ots" 'org-trello/sync-buffer
-        "otc" 'org-trello/sync-card
-        ))))
-;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package
+        "jtb" 'org-trello/jump-to-trello-board
+        "jtc" 'org-trello/jump-to-trello-card))))
+
 
 
