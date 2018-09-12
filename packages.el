@@ -58,34 +58,34 @@ which require an initialization must be listed explicitly in the list.")
 
     :config
     (progn
-      (dolist (prefix '(("t" . "trello")
-                        ("tb" . "board")
-                        ("tc" . "card")
-                        ("tcc" . "comments")
-                        ("tj" . "jump")
-                        ("ts" . "setup")))
+      (dolist (prefix '(("mo" . "trello")
+                        ("mob" . "board")
+                        ("moc" . "card")
+                        ("mocc" . "comments")
+                        ("moj" . "jump")
+                        ("mos" . "setup")))
         (spacemacs/declare-prefix-for-mode 'org-mode (car prefix) (cdr prefix)))
 
       (spacemacs/set-leader-keys-for-major-mode 'org-mode
-        "tbs"  'org-trello/sync-buffer
-        "tbn"  'org-trello/create-board-and-install-metadata
-        "tbu"  'org-trello/update-board-metadata
-        "tbi"  'org-trello/install-board-metadata
-        "tcs"  'org-trello/sync-card
-        "tcd"  'org-trello/archive-card
-        "tcD"  'org-trello/archive-cards
-        "tcd"  'org-trello/kill-entity
-        "tcK"  'org-trello/kill-cards
-        "tcm"  'org-trello/assign-me
-        "tccs" 'org-trello/show-card-comments
-        "tcca" 'org-trello/add-card-comments
-        "tjb"  'org-trello/jump-to-trello-board
-        "tjc"  'org-trello/jump-to-trello-card
-        "tsc"  'org-trello/check-setup
-        "tsd"  'org-trello/delete-setup
-        "tsn"  'org-trello/install-key-and-token
-        "tv"   'org-trello/version
-        "th"   'org-trello/help-describing-bindings)
+        "obs"  'org-trello/sync-buffer
+        "obn"  'org-trello/create-board-and-install-metadata
+        "obu"  'org-trello/update-board-metadata
+        "obi"  'org-trello/install-board-metadata
+        "ocs"  'org-trello/sync-card
+        "ocd"  'org-trello/archive-card
+        "ocD"  'org-trello/archive-cards
+        "ocd"  'org-trello/kill-entity
+        "ocK"  'org-trello/kill-cards
+        "ocm"  'org-trello/assign-me
+        "occs" 'org-trello/show-card-comments
+        "occa" 'org-trello/add-card-comments
+        "ojb"  'org-trello/jump-to-trello-board
+        "ojc"  'org-trello/jump-to-trello-card
+        "osc"  'org-trello/check-setup
+        "osd"  'org-trello/delete-setup
+        "osn"  'org-trello/install-key-and-token
+        "ov"   'org-trello/version
+        "oh"   'org-trello/help-describing-bindings)
 
       (spacemacs/declare-prefix "jt" "trello")
       (evil-leader/set-key
