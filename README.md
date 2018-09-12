@@ -1,10 +1,13 @@
-## trello-org-spacemacs-layer
+# trello-org-spacemacs-layer
 
-A simple `git filter-branch --subdirectory-filter` of https://github.com/axyz/dotfiles/tree/master/.my-spacemacs-layers/trello`
+## install
 
-### install
+1. `git clone https://github.com/popcorn4dinner/trello-org-spacemacs-layer.git ~/.emacs.d/private/trello-org`
+2. Add 'trello' to dotspacemacs-configuration-layers in `.spacemacs` or `.spacemacs.d/init.el`
 
-1. `git clone https://github.com/maxrp/trello-org-spacemacs-layer.git ~/.spacemacs.d/layers/trello`
-1. Add 'trello' to dotspacemacs-configuration-layers in `.spacemacs` or `.spacemacs.d/init.el`
+## Setup
 1. Then <SPC SPC org-trello-install-key-and-token>, you'll be prompted for your trello username
-1. From here, you can follow the upstream docs: https://org-trello.github.io/trello-setup.html
+2. From here, you can follow the upstream docs: https://org-trello.github.io/trello-setup.html
+
+## Key bindings
+
